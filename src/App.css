@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+body {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-nav li {
+  margin-right: 30px;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+#top-nav img {
+  width: 70px !important;
+  border-radius: 50%;
+  margin: 30px 0 10px 0;
+}
+
+/* .navbar-toggler {
+ 
+  margin: auto;
+} */
+
+.carousel-inner {
+  height: 400px;
+}
+#intro {
+  padding: 3em 3em;
+  clear: both;
+}
+#intro h2 {
+  font-style: italic;
+  font-family: "Libre Baskerville", serif;
+}
+
+#services {
+  padding: 3em;
+  clear: both;
+  background: #fafafa;
+}
+
+#services img {
+  width: 100%;
+}
+
+#service-top {
+  flex-direction: column;
+}
+
+#services .desc {
+  margin-top: 20px;
+}
+
+#wisdom {
+  background: url("./images/wisdom.jpg") no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 300px;
+  color: #fff;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+#footer {
+  padding: 2rem;
+  margin-top: 20px;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#social li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.spinner-grow {
+  width: 10rem;
+  height: 10rem;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-inner {
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  #intro {
+    padding: 0;
+    padding-top: 20px;
   }
 }
