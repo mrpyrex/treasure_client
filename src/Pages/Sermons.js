@@ -3,6 +3,7 @@ import { Query } from "react-apollo";
 import { gql } from "apollo-boost";
 import Sermon from "../components/Sermon/Sermon";
 import Loading from "../components/Shared/Loading";
+import Error from "../components/Shared/Error";
 
 const Sermons = () => {
   return (
@@ -10,7 +11,7 @@ const Sermons = () => {
       <Query query={GET_SERMONS_QUERY}>
         {({ data, loading, error }) => {
           if (loading) return <Loading />;
-          if (error) return <h4>error!!</h4>;
+          if (error) return <Error />;
           const sermons = data.sermons;
           return (
             <div className="row">

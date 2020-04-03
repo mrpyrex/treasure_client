@@ -4,6 +4,7 @@ import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import Post from "../components/Blog/Post";
 import Loading from "../components/Shared/Loading";
+import Error from "../components/Shared/Error";
 
 export class Blog extends Component {
   render() {
@@ -14,7 +15,7 @@ export class Blog extends Component {
           <Query query={GET_POSTS_QUERY}>
             {({ data, loading, error }) => {
               if (loading) return <Loading />;
-              if (error) return <h5>error!!</h5>;
+              if (error) return <Error />;
 
               return (
                 <Fragment>
