@@ -8,7 +8,10 @@ import About from "./Pages/About";
 import Sermons from "./Pages/Sermons";
 import Houses from "./Pages/Houses";
 import Blog from "./Pages/Blog";
+import NotFound from "./Pages/NotFound";
 import PostDetails from "./components/Blog/PostDetails";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
         <Route path="/house-care-fellowship" component={Houses} />
         <Route exact path="/blog" component={Blog} />
         <Route path="/blog/:id" component={PostDetails} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/*" component={NotFound} />
       </Switch>
       <Footer />
     </Router>

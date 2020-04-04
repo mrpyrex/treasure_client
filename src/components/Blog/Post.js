@@ -19,7 +19,8 @@ const Post = ({ post }) => {
       <div className="card-footer">
         <p>
           By &mdash; {post.author.firstName} {post.author.lastName}{" "}
-          <Moment format="YYYY-MM-DD">{post.createdAt}</Moment>
+          <Moment format="DD-MM-YYYY">{post.createdAt}</Moment> -{" "}
+          {post.category.catTitle}
         </p>
       </div>
     </div>

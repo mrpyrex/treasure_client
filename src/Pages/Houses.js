@@ -13,7 +13,7 @@ export class Houses extends Component {
           <Query query={GET_CENTERS_QUERY}>
             {({ data, loading, error }) => {
               if (loading) return <Loading />;
-              if (error) return <Error />;
+              if (error) return <Error error={error} />;
 
               return (
                 <Fragment>

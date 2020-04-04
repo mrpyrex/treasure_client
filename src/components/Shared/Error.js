@@ -1,21 +1,20 @@
 import React from "react";
 
-const Error = () => {
+const Error = ({ error }) => {
   return (
-    <div id="notfound" className="container my-4">
-      <div className="notfound">
-        <div className="notfound-404">
-          <h3>Oops! Page not found</h3>
-          <h1>
-            <span>4</span>
-            <span>0</span>
-            <span>4</span>
-          </h1>
-        </div>
-        <h2>
-          we are sorry, but the page you requested has been taken by an angel
-        </h2>
-      </div>
+    <div
+      className="container m-auto alert alert-danger alert-dismissible fade show"
+      role="alert"
+    >
+      {error.message}
+      <button
+        type="button"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   );
 };

@@ -4,6 +4,8 @@ import { Query } from "react-apollo";
 import { useParams } from "react-router-dom";
 import Moment from "react-moment";
 import Loading from "../Shared/Loading";
+import CreatePost from "./CreatePost";
+import Error from "../Shared/Error";
 
 const PostDetails = () => {
   let { id } = useParams();
@@ -13,7 +15,7 @@ const PostDetails = () => {
       <Query query={GET_POSTDETAIL_QUERY} variables={{ id }}>
         {({ data, loading, error }) => {
           if (loading) return <Loading />;
-          if (error) return <div>error!!!</div>;
+          if (error) return <Error />;
 
           const { title, thumb, createdAt, content, author } = data.post;
 
@@ -30,7 +32,9 @@ const PostDetails = () => {
                     <Moment fromNow>{createdAt}</Moment>{" "}
                   </small>
                 </div>
-                <div className="col-md-4">Aside</div>
+                <div className="col-md-4">
+                  <CreatePost />
+                </div>
               </div>
             </div>
           );

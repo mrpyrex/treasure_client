@@ -11,7 +11,7 @@ const Sermons = () => {
       <Query query={GET_SERMONS_QUERY}>
         {({ data, loading, error }) => {
           if (loading) return <Loading />;
-          if (error) return <Error />;
+          if (error) return <Error error={error} />;
           const sermons = data.sermons;
           return (
             <div className="row">
