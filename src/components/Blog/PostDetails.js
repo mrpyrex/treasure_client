@@ -6,8 +6,9 @@ import Moment from "react-moment";
 import Loading from "../Shared/Loading";
 import CreatePost from "./CreatePost";
 import Error from "../Shared/Error";
+import DeletePost from "./DeletePost";
 
-const PostDetails = () => {
+const PostDetails = (post) => {
   let { id } = useParams();
 
   return (
@@ -22,7 +23,7 @@ const PostDetails = () => {
           return (
             <div className="container">
               <div className="row">
-                <div className="col-md-8">
+                <div className="col-md-8 mb-3">
                   <img src={thumb} alt={title} />
                   <h3>{title}</h3>
                   <p>{content}</p>
@@ -31,9 +32,15 @@ const PostDetails = () => {
                     {" "}
                     <Moment fromNow>{createdAt}</Moment>{" "}
                   </small>
+                  <div className="row my-4">
+                    <button className="btn btn-primary btn-sm">
+                      Update Post
+                    </button>
+                    <DeletePost />
+                  </div>
                 </div>
                 <div className="col-md-4">
-                  <CreatePost />
+                  <CreatePost post={post} />
                 </div>
               </div>
             </div>
