@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import "./App.css";
 import Navbar from "./components/Shared/Navbar";
 import Footer from "./components/Shared/Footer";
@@ -13,22 +14,26 @@ import PostDetails from "./components/Blog/PostDetails";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 
+import { UserProvider } from "./Contexts/UserContext";
+
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/messages-and-sermons" component={Sermons} />
-        <Route path="/house-care-fellowship" component={Houses} />
-        <Route exact path="/blog" component={Blog} />
-        <Route path="/blog/:id" component={PostDetails} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
-        <Route path="/*" component={NotFound} />
-      </Switch>
-      <Footer />
+      <UserProvider>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/messages-and-sermons" component={Sermons} />
+          <Route path="/house-care-fellowship" component={Houses} />
+          <Route exact path="/blog" component={Blog} />
+          <Route path="/blog/:id" component={PostDetails} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/*" component={NotFound} />
+        </Switch>
+        <Footer />
+      </UserProvider>
     </Router>
   );
 }

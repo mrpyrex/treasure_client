@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { ApolloProvider, Query } from "react-apollo";
 import ApolloClient, { gql } from "apollo-boost";
 
@@ -26,12 +27,6 @@ const client = new ApolloClient({
     },
   },
 });
-
-const IS_LOGGED_IN_QUERY = gql`
-  query {
-    isLoggedIn @client
-  }
-`;
 
 ReactDOM.render(
   <ApolloProvider client={client}>

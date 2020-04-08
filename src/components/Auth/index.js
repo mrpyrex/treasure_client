@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+
 import Register from "./Register";
+import Login from "./Login";
 
 export default () => {
-  return <Register />;
+  const [newAuthor, setNewAuthor] = useState(true);
+
+  return newAuthor ? (
+    <Register setNewAuthor={setNewAuthor} />
+  ) : (
+    <Login setNewAuthor={setNewAuthor} />
+  );
 };

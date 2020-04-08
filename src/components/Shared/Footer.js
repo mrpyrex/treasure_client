@@ -46,9 +46,9 @@ const Footer = () => {
             <li>Faith Clinic &mdash; 6:00 PM To 7:30 PM</li>
           </ul>
         </div>
-        <div id="map" className="col-md-4">
+        {/* <div id="map" className="col-md-4">
           <h3>Map?</h3>
-        </div>
+        </div> */}
       </div>
     </div>
   );

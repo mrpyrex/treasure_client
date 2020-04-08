@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
+
+import Container from "react-bootstrap/Container";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+
 import Error from "../Shared/Error";
 
-const Register = () => {
+const Register = ({ setNewAuthor }) => {
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
 
   const handleSubmit = (event, createAuthor) => {
     event.preventDefault();
@@ -27,19 +33,23 @@ const Register = () => {
           lastName,
           username,
           email,
-          password
+          password,
+        }}
+        onCompleted={(data) => {
+          console.log(data);
+          setShow(true);
         }}
       >
         {(createAuthor, { loading, error }) => {
           return (
-            <form onSubmit={event => handleSubmit(event, createAuthor)}>
+            <form onSubmit={(event) => handleSubmit(event, createAuthor)}>
               <div className="row">
                 <div className="col form-group">
                   <label htmlFor="firstname">Firstname</label>
                   <input
                     type="text"
                     className="form-control"
-                    onChange={event => setFirstname(event.target.value)}
+                    onChange={(event) => setFirstname(event.target.value)}
                   />
                 </div>
                 <div className="col form-group">
@@ -47,7 +57,7 @@ const Register = () => {
                   <input
                     type="text"
                     className="form-control"
-                    onChange={event => setLastname(event.target.value)}
+                    onChange={(event) => setLastname(event.target.value)}
                   />
                 </div>
               </div>
@@ -57,7 +67,7 @@ const Register = () => {
                   type="email"
                   className="form-control"
                   id="email"
-                  onChange={event => setEmail(event.target.value)}
+                  onChange={(event) => setEmail(event.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -66,7 +76,7 @@ const Register = () => {
                   type="text"
                   className="form-control"
                   id="username"
-                  onChange={event => setUsername(event.target.value)}
+                  onChange={(event) => setUsername(event.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -75,7 +85,7 @@ const Register = () => {
                   type="password"
                   className="form-control"
                   id="password"
-                  onChange={event => setPassword(event.target.value)}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
               </div>
               {/* <div className="form-group">
@@ -110,6 +120,21 @@ const Register = () => {
       <small>
         <Link to="/login">Already have an account? Signin here</Link>
       </small>
+      <Container fluid="sm">
+        <Modal show={show} animation={true}>
+          <Modal.Header closeButton>
+            <Modal.Title>New User</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            A new user with username {username} has been created successfully!
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setNewAuthor(false)}>
+              Login
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </Container>
     </div>
   );
 };
