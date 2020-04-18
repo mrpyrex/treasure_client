@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from "react";
 
-import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
+
 import Post from "../components/Blog/Post";
 import Loading from "../components/Shared/Loading";
 import Error from "../components/Shared/Error";
+import { GET_POSTS_QUERY } from "../queries";
 
 export class Blog extends Component {
   render() {
@@ -19,7 +20,7 @@ export class Blog extends Component {
 
               return (
                 <Fragment>
-                  {data.posts.map(post => (
+                  {data.posts.map((post) => (
                     <div className="col-md-4 mb-4" key={post.id}>
                       <Post post={post} />
                     </div>
@@ -35,27 +36,3 @@ export class Blog extends Component {
 }
 
 export default Blog;
-
-const GET_POSTS_QUERY = gql`
-  query PostsQuery {
-    posts {
-      id
-      title
-      thumb
-      createdAt
-      content
-      category {
-        id
-        catTitle
-      }
-      published
-      featured
-      author {
-        id
-        username
-        firstName
-        lastName
-      }
-    }
-  }
-`;

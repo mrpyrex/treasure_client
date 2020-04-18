@@ -121,3 +121,38 @@ export const DELETE_POST_MUTATION = gql`
     }
   }
 `;
+
+export const GET_POST_CAT_QUERY = gql`
+  query PostsCatQuery {
+    postCats {
+      id
+      catDesc
+      catTitle
+    }
+  }
+`;
+
+export const GET_CENTERS_QUERY = gql`
+  query CentersQuery {
+    houses {
+      id
+      name
+      host
+      address
+      phone
+    }
+  }
+`;
+
+export const GET_SERMONS_QUERY = gql`
+  query getSermonsQuery {
+    sermons {
+      id
+      title
+      description
+      url
+      createdBy
+      createdAt
+    }
+  }
+`;

@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from "react";
-import { gql } from "apollo-boost";
+import React, { useState } from "react";
 import { Query, Mutation } from "react-apollo";
+
+import { GET_POST_CAT_QUERY, CREATE_POST_MUTATION } from "../../queries";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -99,28 +100,3 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
-
-const GET_POST_CAT_QUERY = gql`
-  query PostsCatQuery {
-    postCats {
-      id
-      catDesc
-      catTitle
-    }
-  }
-`;
-
-const CREATE_POST_MUTATION = gql`
-  mutation($title: String!, $content: String!, $thumb: String!) {
-    createPost(title: $title, content: $content, thumb: $thumb) {
-      post {
-        id
-        title
-        content
-        thumb
-        createdAt
-        slug
-      }
-    }
-  }
-`;

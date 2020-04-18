@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ApolloProvider, Query } from "react-apollo";
-import ApolloClient, { gql } from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import ApolloClient from "apollo-boost";
 
 const client = new ApolloClient({
   // uri: "https://treasurehousebackend.herokuapp.com/graphql/",

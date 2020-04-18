@@ -1,11 +1,11 @@
 import React from "react";
 import { ApolloConsumer } from "react-apollo";
 
-const SignOut = () => {
+const SignOut = (props) => {
   const handleSignout = (client) => {
     localStorage.removeItem("authToken");
     client.writeData({ data: { isLoggedIn: false } });
-    // this.props.history.push("/");
+    //  props.history.push("/");
   };
   return (
     <ApolloConsumer>

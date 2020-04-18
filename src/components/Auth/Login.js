@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
 
-const Login = () => {
+import { LOGIN_MUTATION } from "../../queries";
+
+const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,7 +13,7 @@ const Login = () => {
     const res = await tokenAuth();
     localStorage.setItem("authToken", res.data.tokenAuth.token);
     client.writeData({ data: { isLoggedIn: true } });
-    // this.props.history.push("/");
+    props.history.push("/");
   };
   return (
     <div id="login-form" className="container">
@@ -23,7 +24,6 @@ const Login = () => {
           username,
           password,
         }}
-        // onCompleted={props.history.push("/")}
       >
         {(tokenAuth, { loading, error, called, client }) => {
           return (
@@ -66,11 +66,3 @@ const Login = () => {
 };
 
 export default Login;
-
-const LOGIN_MUTATION = gql`
-  mutation($username: String!, $password: String!) {
-    tokenAuth(username: $username, password: $password) {
-      token
-    }
-  }
-`;

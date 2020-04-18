@@ -1,6 +1,7 @@
 import React from "react";
-import { gql } from "apollo-boost";
-import { Query, Mutation } from "react-apollo";
+import { Mutation } from "react-apollo";
+
+import { DELETE_POST_MUTATION } from "../../queries";
 
 const DeletePost = (post) => {
   return (
@@ -21,11 +22,3 @@ const DeletePost = (post) => {
 };
 
 export default DeletePost;
-
-const DELETE_POST_MUTATION = gql`
-  mutation($postId: Int!) {
-    deletePost(postId: $postId) {
-      postId
-    }
-  }
-`;

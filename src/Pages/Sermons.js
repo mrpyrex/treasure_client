@@ -1,9 +1,11 @@
 import React from "react";
 import { Query } from "react-apollo";
-import { gql } from "apollo-boost";
+
 import Sermon from "../components/Sermon/Sermon";
 import Loading from "../components/Shared/Loading";
 import Error from "../components/Shared/Error";
+
+import { GET_SERMONS_QUERY } from "../queries";
 
 const Sermons = () => {
   return (
@@ -25,16 +27,3 @@ const Sermons = () => {
 };
 
 export default Sermons;
-
-export const GET_SERMONS_QUERY = gql`
-  query getSermonsQuery {
-    sermons {
-      id
-      title
-      description
-      url
-      createdBy
-      createdAt
-    }
-  }
-`;

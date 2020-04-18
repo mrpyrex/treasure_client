@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
 
 import Container from "react-bootstrap/Container";
@@ -8,6 +7,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
 import Error from "../Shared/Error";
+import { REGISTER_MUTATION } from "../../queries";
 
 const Register = ({ setNewAuthor }) => {
   const [firstName, setFirstname] = useState("");
@@ -129,8 +129,8 @@ const Register = ({ setNewAuthor }) => {
             A new user with username {username} has been created successfully!
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={() => setNewAuthor(false)}>
-              Login
+            <Button variant="secondary">
+              <Link to="/login">Login</Link>
             </Button>
           </Modal.Footer>
         </Modal>
@@ -140,28 +140,3 @@ const Register = ({ setNewAuthor }) => {
 };
 
 export default Register;
-
-const REGISTER_MUTATION = gql`
-  mutation(
-    $firstName: String!
-    $lastName: String!
-    $username: String!
-    $email: String!
-    $password: String!
-  ) {
-    createAuthor(
-      firstName: $firstName
-      lastName: $lastName
-      username: $username
-      email: $email
-      password: $password
-    ) {
-      author {
-        username
-        email
-        firstName
-        lastName
-      }
-    }
-  }
-`;

@@ -1,5 +1,4 @@
 import React from "react";
-import { gql } from "apollo-boost";
 import { Query } from "react-apollo";
 import { useParams } from "react-router-dom";
 import Moment from "react-moment";
@@ -7,6 +6,8 @@ import Loading from "../Shared/Loading";
 import CreatePost from "./CreatePost";
 import Error from "../Shared/Error";
 import DeletePost from "./DeletePost";
+
+import { GET_POSTDETAIL_QUERY } from "../../queries";
 
 const PostDetails = (post) => {
   let { id } = useParams();
@@ -52,27 +53,3 @@ const PostDetails = (post) => {
 };
 
 export default PostDetails;
-
-const GET_POSTDETAIL_QUERY = gql`
-  query PostDetailQuery($id: Int!) {
-    post(id: $id) {
-      id
-      title
-      thumb
-      createdAt
-      content
-      category {
-        id
-        catTitle
-      }
-      published
-      featured
-      author {
-        id
-        username
-        firstName
-        lastName
-      }
-    }
-  }
-`;
