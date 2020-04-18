@@ -5,6 +5,7 @@ const SignOut = () => {
   const handleSignout = (client) => {
     localStorage.removeItem("authToken");
     client.writeData({ data: { isLoggedIn: false } });
+    // this.props.history.push("/");
   };
   return (
     <ApolloConsumer>

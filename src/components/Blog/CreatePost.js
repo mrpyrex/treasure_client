@@ -20,7 +20,7 @@ const CreatePost = () => {
   // };
 
   return (
-    <div className="card">
+    <div className="container">
       <h3 className="text-center pt-2 my-0">Add A New Post</h3>
       <Mutation mutation={CREATE_POST_MUTATION}>
         {(createPost, { loading, error }) => {
@@ -64,26 +64,25 @@ const CreatePost = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="category">Select Category</label>
-                <select
-                  className="form-control"
-                  id="category"
-                  onChange={(event) => setCategory(event.target.value)}
-                >
-                  <Query query={GET_POST_CAT_QUERY}>
-                    {({ data, loading, error }) => {
-                      if (loading) return <option disabled>loading...</option>;
-                      if (error) return <option disabled>error!!</option>;
 
-                      return (
-                        <Fragment>
-                          {data.postCats.map((postCat) => (
-                            <option key={postCat.id}>{postCat.catTitle}</option>
-                          ))}
-                        </Fragment>
-                      );
-                    }}
-                  </Query>
-                </select>
+                <Query query={GET_POST_CAT_QUERY}>
+                  {({ data, loading, error }) => {
+                    if (loading) return <option disabled>loading...</option>;
+                    if (error) return <option disabled>error!!</option>;
+
+                    return (
+                      <select
+                        className="form-control"
+                        id="category"
+                        onChange={(event) => setCategory(event.target.value)}
+                      >
+                        {data.postCats.map((postCat) => (
+                          <option key={postCat.id}>{postCat.catTitle}</option>
+                        ))}
+                      </select>
+                    );
+                  }}
+                </Query>
               </div>
 
               <div className="form-row my-2">

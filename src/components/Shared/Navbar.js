@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
+import SignOut from "../Auth/SignOut";
 
-const Navbar = () => {
+const Navbar = ({ currentUser }) => {
   return (
     <Fragment>
       <div className="row">
@@ -64,6 +65,19 @@ const Navbar = () => {
                 Give
               </Link>
             </li>
+
+            {currentUser && (
+              <Fragment>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    Welcome, {currentUser.username}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <SignOut />
+                </li>
+              </Fragment>
+            )}
           </ul>
         </div>
       </nav>

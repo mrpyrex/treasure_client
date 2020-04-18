@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
 
-const Login = props => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,6 +12,7 @@ const Login = props => {
     const res = await tokenAuth();
     localStorage.setItem("authToken", res.data.tokenAuth.token);
     client.writeData({ data: { isLoggedIn: true } });
+    // this.props.history.push("/");
   };
   return (
     <div id="login-form" className="container">
@@ -20,20 +21,20 @@ const Login = props => {
         mutation={LOGIN_MUTATION}
         variables={{
           username,
-          password
+          password,
         }}
         // onCompleted={props.history.push("/")}
       >
         {(tokenAuth, { loading, error, called, client }) => {
           return (
-            <form onSubmit={event => handleSubmit(event, tokenAuth, client)}>
+            <form onSubmit={(event) => handleSubmit(event, tokenAuth, client)}>
               <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <input
                   type="text"
                   className="form-control"
                   id="username"
-                  onChange={event => setUsername(event.target.value)}
+                  onChange={(event) => setUsername(event.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -42,7 +43,7 @@ const Login = props => {
                   type="password"
                   className="form-control"
                   id="password"
-                  onChange={event => setPassword(event.target.value)}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
               </div>
 

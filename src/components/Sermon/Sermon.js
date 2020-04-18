@@ -5,9 +5,9 @@ import Moment from "react-moment";
 const Sermon = ({ sermons }) => {
   return (
     <Fragment>
-      {sermons.map(sermon => (
-        <div className="col-md-4 my-2">
-          <div className="card" key={sermon.id}>
+      {sermons.map((sermon) => (
+        <div className="col-md-4 my-2" key={sermon.id}>
+          <div className="card">
             <div className="card-body">
               <h3 className="card-title">{sermon.title}</h3>
               <p>
