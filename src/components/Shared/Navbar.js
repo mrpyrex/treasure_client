@@ -45,16 +45,38 @@ const Navbar = ({ currentUser }) => {
                 Sermons
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
+
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 About
               </Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link className="dropdown-item" to="/mission">
+                  Our Mission
+                </Link>
+                <Link className="dropdown-item" to="/ministries">
+                  Ministries
+                </Link>
+                <Link className="dropdown-item" to="/history">
+                  History
+                </Link>
+                <Link className="dropdown-item" to="/leadership">
+                  Leadership
+                </Link>
+                <Link className="dropdown-item" to="/house-care-fellowship">
+                  HCF
+                </Link>
+              </div>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/house-care-fellowship">
-                HCF
-              </Link>
-            </li>
+
             <li className="nav-item">
               <Link className="nav-link" to="/blog">
                 Blog

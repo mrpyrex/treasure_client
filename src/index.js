@@ -6,8 +6,8 @@ import { ApolloProvider } from "react-apollo";
 import ApolloClient from "apollo-boost";
 
 const client = new ApolloClient({
-  uri: "https://treasurehousebackend.herokuapp.com/graphql/",
-  // uri: "http://localhost:8000/graphql/",
+  // uri: "https://treasurehousebackend.herokuapp.com/graphql/",
+  uri: "http://localhost:8000/graphql/",
 
   fetchOptions: {
     credentials: "include",

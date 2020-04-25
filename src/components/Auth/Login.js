@@ -13,7 +13,7 @@ const Login = (props) => {
     const res = await tokenAuth();
     localStorage.setItem("authToken", res.data.tokenAuth.token);
     client.writeData({ data: { isLoggedIn: true } });
-    props.history.push("/");
+    props.history.push("/dashboard");
   };
   return (
     <div id="login-form" className="container">
