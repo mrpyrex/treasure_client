@@ -136,15 +136,15 @@ const Ministries = () => {
           </h6>
           Through:{" "}
           <ul>
-            <li> • Bible Passage Display & Worship Songs</li>
-            <li> • Publishing</li>
-            <li> • Audio, Media & Live Broadcast – Seeing is believing</li>
+            <li> Bible Passage Display & Worship Songs</li>
+            <li> Publishing</li>
+            <li> Audio, Media & Live Broadcast – Seeing is believing</li>
             <li>
               {" "}
-              • Message Recording, Duplication & Provision – Faith cometh by
+              Message Recording, Duplication & Provision – Faith cometh by
               hearing, and hearing … (Romans 10: 17){" "}
             </li>
-            <li> • Technical Support & IT and more …</li>
+            <li> Technical Support & IT and more …</li>
           </ul>
           <h3>Sanitation</h3>
           <p>
@@ -158,18 +158,16 @@ const Ministries = () => {
             Member of this group are responsible for:
             <ul>
               <li>
-                • Cleaning up the church, Conveniences, Children church and
+                Cleaning up the church, Conveniences, Children church and
                 associated property
               </li>
               <li>
-                • Maintaining orderliness in the auditorium before, during and
+                Maintaining orderliness in the auditorium before, during and
                 after services
               </li>
+              <li>Arrange the sanctuary to meet the needs of each services</li>
               <li>
-                • Arrange the sanctuary to meet the needs of each services
-              </li>
-              <li>
-                • Carryout proper waste management within the church premises
+                Carryout proper waste management within the church premises
               </li>
             </ul>
           </p>
@@ -229,10 +227,15 @@ const Ministries = () => {
             We inform you of our church programs? We are happy to assist you in
             becoming familiar with the church, its mission and its programs.
             This can be termed as an “integration process” into The Treasure
-            House family. • Introduce the church / Meet our members • Get
-            helpful information for your first time visit • How to contact us •
-            Interested in becoming a member? • Interested in becoming a worker
-            in the church? • Interested in joining a department in the church?{" "}
+            House family.
+            <ul>
+              <li> Introduce the church / Meet our members</li>{" "}
+              <li> Get helpful information for your first time visit</li>
+              <li> How to contact us</li>
+              <li> Interested in becoming a member?</li>{" "}
+              <li> Interested in becoming a worker in the church?</li>{" "}
+            </ul>{" "}
+            Interested in joining a department in the church?{" "}
           </p>
           <p>
             We care for you! We want to encourage you and see that your
@@ -259,11 +262,23 @@ const Ministries = () => {
             what God will do in you and through you.{" "}
           </p>
           <p>
-            We are what we do: • We are door keepers – meeting and warmly
-            welcoming visitors and members to the presence of God • We maintain
-            law and order – ensuring people sit orderly during church services.
-            • We are helpers – assisting the weak and needy as much as it lies
-            within our capacity{" "}
+            We are what we do:{" "}
+            <ul>
+              <li>
+                {" "}
+                We are door keepers – meeting and warmly welcoming visitors and
+                members to the presence of God
+              </li>
+              <li>
+                {" "}
+                We maintain law and order – ensuring people sit orderly during
+                church services.
+              </li>
+              <li>
+                We are helpers – assisting the weak and needy as much as it lies
+                within our capacity
+              </li>
+            </ul>
           </p>
           <p>
             You are welcome to join the team that is being continually molded by

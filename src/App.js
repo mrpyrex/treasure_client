@@ -22,6 +22,7 @@ import History from "./Pages/History";
 import Ministries from "./Pages/Ministries";
 import Mission from "./Pages/Mission";
 import Leadership from "./Pages/Leadership";
+import Privacy from "./Pages/Privacy";
 
 export const UserContext = createContext();
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
                 <Route path="/dashboard" component={Dashboard} />
+                <Route exact path="/privacy" component={Privacy} />
                 <Route path="/*" component={NotFound} />
               </Switch>
               <Footer />

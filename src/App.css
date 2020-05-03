@@ -7,14 +7,6 @@ a:link {
   text-decoration: none;
 }
 
-li {
-  list-style-type: none;
-}
-
-ul {
-  padding: 0;
-}
-
 .navbar-nav li {
   margin-right: 30px;
 }
@@ -200,6 +192,10 @@ ul {
   color: #fff;
 }
 
+#footer ul {
+  list-style-type: none;
+}
+
 #social li {
   display: inline-block;
   margin-right: 2rem;
@@ -208,6 +204,10 @@ ul {
 .spinner-grow {
   width: 10rem;
   height: 10rem;
+}
+
+#privacy ul {
+  list-style-type: disc;
 }
 
 @media screen and (max-width: 768px) {

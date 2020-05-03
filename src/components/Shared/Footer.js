@@ -50,6 +50,12 @@ const Footer = () => {
           <h3>Map?</h3>
         </div> */}
       </div>
+      <div className="row">
+        <p className="mx-auto my-2">
+          {new Date().getFullYear()} &copy; The Redeemed Christian Church Of
+          God, Treasure House. <Link to="/privacy">Privacy Policy</Link>
+        </p>
+      </div>
     </div>
   );
 };
